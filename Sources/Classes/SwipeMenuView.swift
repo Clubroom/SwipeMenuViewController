@@ -409,9 +409,22 @@ extension SwipeMenuView: UIScrollViewDelegate {
 
         updateTabViewAddition(by: scrollView)
     }
-
+    
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            handleScroll(scrollView)
+        }
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        handleScroll(scrollView)
+    }
+    
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-
+        handleScroll(scrollView)
+    }
+    
+    private func handleScroll(_ scrollView: UIScrollView) {
         if isJumping || isLayoutingSubviews {
             if let toIndex = jumpingToIndex {
                 delegate?.swipeMenuView(self, didChangeIndexFrom: currentIndex, to: toIndex)
@@ -422,7 +435,7 @@ extension SwipeMenuView: UIScrollViewDelegate {
             isLayoutingSubviews = false
             return
         }
-
+        
         updateTabViewAddition(by: scrollView)
     }
 
