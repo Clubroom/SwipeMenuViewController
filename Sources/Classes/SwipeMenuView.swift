@@ -427,8 +427,9 @@ extension SwipeMenuView: UIScrollViewDelegate {
     private func handleScroll(_ scrollView: UIScrollView) {
         if isJumping || isLayoutingSubviews {
             if let toIndex = jumpingToIndex {
-                delegate?.swipeMenuView(self, didChangeIndexFrom: currentIndex, to: toIndex)
+                let lastIndex = currentIndex
                 currentIndex = toIndex
+                delegate?.swipeMenuView(self, didChangeIndexFrom: lastIndex, to: currentIndex)
                 jumpingToIndex = nil
             }
             isJumping = false
