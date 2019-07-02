@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol ContentScrollViewDataSource {
+public protocol ContentScrollViewDataSource: class {
 
     func numberOfPages(in contentScrollView: ContentScrollView) -> Int
 
@@ -9,7 +9,7 @@ public protocol ContentScrollViewDataSource {
 
 open class ContentScrollView: UIScrollView {
 
-    open var dataSource: ContentScrollViewDataSource?
+    open weak var dataSource: ContentScrollViewDataSource?
 
     fileprivate var pageViews: [UIView] = []
 
