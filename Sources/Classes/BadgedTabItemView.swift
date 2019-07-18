@@ -11,7 +11,7 @@ import UIKit
 
 import SwipeMenuViewController
 
-public class BadgeView: UIView {
+private class BadgeView: UIView {
     
     var label: UILabel = {
         let label = UILabel()
@@ -50,7 +50,7 @@ public class BadgeView: UIView {
     }
 }
 
-public class BadgedTabItemView: TabItemView {
+open class BadgedTabItemView: TabItemView {
     
     private var badgeView: BadgeView = {
         let view = BadgeView()
@@ -59,7 +59,7 @@ public class BadgedTabItemView: TabItemView {
         return view
     }()
     
-    public var badgeText: String? {
+    open var badgeText: String? {
         get {
             return badgeView.label.text
         }
@@ -69,7 +69,7 @@ public class BadgedTabItemView: TabItemView {
         }
     }
     
-    public var badgeColor: UIColor? {
+    open var badgeColor: UIColor? {
         get {
             return badgeView.backgroundColor
         }
