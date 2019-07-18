@@ -26,6 +26,9 @@ public protocol TabViewDataSource: class {
 
     /// Return strings to be displayed at the tab in `TabView`.
     func tabView(_ tabView: TabView, titleForItemAt index: Int) -> String?
+    
+    /// Return views to be used for the tabs
+    func tabView(_ tabView: TabView, viewForTabAtIndex index: Int) -> TabItemView?
 }
 
 open class TabView: UIScrollView {
@@ -211,7 +214,9 @@ open class TabView: UIScrollView {
         var xPosition: CGFloat = 0
 
         for index in 0..<itemCount {
-            let tabItemView = TabItemView(frame: CGRect(x: xPosition, y: 0, width: options.itemView.width, height: containerView.frame.size.height))
+            let tabItemView = dataSource.tabView(self, viewForTabAtIndex: index) ??
+                TabItemView(frame: CGRect(x: xPosition, y: 0, width: options.itemView.width, height: containerView.frame.size.height))
+            
             tabItemView.translatesAutoresizingMaskIntoConstraints = false
             tabItemView.clipsToBounds = options.clipsToBounds
             if let title = dataSource.tabView(self, titleForItemAt: index) {

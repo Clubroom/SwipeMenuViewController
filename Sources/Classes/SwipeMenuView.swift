@@ -174,6 +174,9 @@ public protocol SwipeMenuViewDataSource: class {
 
     /// Return a ViewController to be displayed at the page in `SwipeMenuView`.
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController
+    
+    /// Return views to be used for the tabs
+    func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewForTabAtIndex index: Int) -> TabItemView?
 }
 
 // MARK: - SwipeMenuView
@@ -389,6 +392,10 @@ extension SwipeMenuView: TabViewDelegate, TabViewDataSource {
 
     public func tabView(_ tabView: TabView, titleForItemAt index: Int) -> String? {
         return dataSource?.swipeMenuView(self, titleForPageAt: index)
+    }
+    
+    public func tabView(_ tabView: TabView, viewForTabAtIndex index: Int) -> TabItemView? {
+        return dataSource?.swipeMenuView(self, viewForTabAtIndex: index)
     }
 }
 

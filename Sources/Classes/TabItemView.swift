@@ -1,6 +1,6 @@
 import UIKit
 
-final class TabItemView: UIView {
+open class TabItemView: UIView {
 
     private(set) var titleLabel: UILabel = UILabel()
 
@@ -27,7 +27,7 @@ final class TabItemView: UIView {
         super.init(coder: aDecoder)
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
     }
 
