@@ -408,9 +408,13 @@ extension TabView {
         update(index)
 
         if animated {
+            isUserInteractionEnabled = false
             UIView.animate(withDuration: options.additionView.animationDuration, animations: {
                 self.updateAdditionViewPosition(index: index)
-            }, completion: completion)
+            }, completion: { [weak self] finished in
+                self?.isUserInteractionEnabled = true
+                completion?(finished)
+            })
         } else {
             updateAdditionViewPosition(index: index)
         }
