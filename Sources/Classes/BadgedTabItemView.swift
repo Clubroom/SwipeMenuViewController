@@ -34,7 +34,7 @@ public class BadgeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         layer.cornerRadius = bounds.height/2
