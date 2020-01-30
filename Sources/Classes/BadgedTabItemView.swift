@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-import SwipeMenuViewController
-
 private class BadgeView: UIView {
     
     var label: UILabel = {
@@ -91,7 +89,7 @@ open class BadgedTabItemView: TabItemView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            badgeView.topAnchor.constraint(equalTo: topAnchor, constant: -2.0),
+            badgeView.topAnchor.constraint(equalTo: topAnchor, constant: 2.0),
             badgeView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0.0),
             badgeView.widthAnchor.constraint(greaterThanOrEqualTo: badgeView.heightAnchor, multiplier: 1.0, constant: 0.0)
             ])

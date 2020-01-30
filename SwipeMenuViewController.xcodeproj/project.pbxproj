@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2F281B23E32C3A00E8E167 /* BadgedTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F281A23E32C3A00E8E167 /* BadgedTabItemView.swift */; };
 		981655BE1F4340870011AEB6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981655BD1F4340870011AEB6 /* UIColorExtension.swift */; };
 		982CF1071EFBD7040086649C /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CF1061EFBD7040086649C /* TabView.swift */; };
 		982CF1091EFBD70B0086649C /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CF1081EFBD70B0086649C /* TabItemView.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B2F281A23E32C3A00E8E167 /* BadgedTabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgedTabItemView.swift; sourceTree = "<group>"; };
 		981655BD1F4340870011AEB6 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		982CF1061EFBD7040086649C /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		982CF1081EFBD70B0086649C /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		94C14AE421574AFA00F52EE3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3B2F281A23E32C3A00E8E167 /* BadgedTabItemView.swift */,
 				98E73FC01F0E1D230063DF18 /* ContentScrollView.swift */,
 				98EEED671EFA638700A149EB /* SwipeMenuView.swift */,
 				98EEED651EFA637B00A149EB /* SwipeMenuViewController.swift */,
@@ -239,6 +242,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -286,6 +290,7 @@
 				989A0B9F1F9C2F780062AB1B /* UIViewExtension.swift in Sources */,
 				98EEED661EFA637B00A149EB /* SwipeMenuViewController.swift in Sources */,
 				981655BE1F4340870011AEB6 /* UIColorExtension.swift in Sources */,
+				3B2F281B23E32C3A00E8E167 /* BadgedTabItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
